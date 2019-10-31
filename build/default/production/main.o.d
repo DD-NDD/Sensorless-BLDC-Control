@@ -1,4 +1,6 @@
 build/default/production/main.o:  \
 main.c  \
+confibit.h  \
 defs.h  \
-uart.h 
+debug.h  \
+ init_PWM.h 
