@@ -12,6 +12,8 @@
 #include "debug.h"
 #include "stdio.h"
 #include "init_PWM.h"
+#include "Motor_isr.h"
+#include "slow_event.h"
 //------------------------------------------------------------------------------
 //UART
 /* Received data is stored in array Buf  */
@@ -53,6 +55,7 @@ void __attribute__((__interrupt__,auto_psv)) _U1RXInterrupt(void)
 } 
 //------------------------------------------------------------------------------
 void DelayNmSec(unsigned int N);
+//--Main------------------------------------------------------------------------
 int main(void) 
 {
     LATE = 0x0000;
@@ -67,14 +70,22 @@ int main(void)
         printf("ngodinhduy011@gmail.com\r\n");
         printf("UART INIT OK\r\n");
     }
+    T2CON = 0x0010;			// 1:8 prescaler
+	TMR2 = 0;				// clear Timer 2
+	IFS0bits.T2IF = 0;		// Disable the Timer 2 interrupt
+	IEC0bits.T2IE = 1;
+	T2CONbits.TON = 1; 		// Turn on Timer 2
+    printf("Timer 2 INIT OK\r\n");
     if(initPWM() == 1)
     {
         printf("MCPWM INIT OK\r\n");
     }
     
+    //PWMCON1 = 0x0777;
+    RunMode = SENSORLESS_RUNNING;
     while(1)
     {
-        DelayNmSec(1000);
+        //SlowEvent();
     }
     return 0;
 }
