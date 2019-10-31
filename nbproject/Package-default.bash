@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/BLDC_Sensorless.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=BLDC_Sensorless.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=bldcsensorless.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Sensorless-BLDC-Control.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=Sensorless-BLDC-Control.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=sensorless-bldc-control/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/bldcsensorless.x/bin
+makeDirectory ${TMPDIR}/sensorless-bldc-control/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/bldcsensorless.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/sensorless-bldc-control.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/bldcsensorless.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/sensorless-bldc-control.tar *
 checkReturnCode
 
 # Cleanup
