@@ -80,8 +80,6 @@ int main(void)
     {
         printf("MCPWM INIT OK\r\n");
     }
-    
-    //PWMCON1 = 0x0777;
     RunMode = SENSORLESS_RUNNING;
     while(1)
     {

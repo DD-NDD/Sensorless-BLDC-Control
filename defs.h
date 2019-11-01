@@ -21,6 +21,8 @@ extern "C" {
 // pwm frequency
 #define		FPWM	20000
 #define	FULL_DUTY (2*FCY/FPWM)
+    
+#define lock1  (unsigned int)((unsigned long)50)*FULL_DUTY/100;
 // Timer 1,2, and 3 prescaler
 #define TMR1_PRESCALER 8UL
 

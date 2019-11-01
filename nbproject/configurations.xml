@@ -8,6 +8,9 @@
       <itemPath>debug.h</itemPath>
       <itemPath>confibit.h</itemPath>
       <itemPath>init_PWM.h</itemPath>
+      <itemPath>Motor_isr.h</itemPath>
+      <itemPath>slow_event.h</itemPath>
+      <itemPath>hardware.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +22,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>debug.c</itemPath>
       <itemPath>init_PWM.c</itemPath>
+      <itemPath>Motor_isr.c</itemPath>
+      <itemPath>slow_event.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -37,7 +42,7 @@
         <targetDevice>dsPIC30F4011</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pk4hybrid</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>3</platform>

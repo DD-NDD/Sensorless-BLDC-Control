@@ -3,4 +3,6 @@ main.c  \
 confibit.h  \
 defs.h  \
 debug.h  \
- init_PWM.h 
+ init_PWM.h  \
+Motor_isr.h  \
+slow_event.h 

@@ -5,7 +5,12 @@
         <group>
             <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/defs.h</file>
             <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/main.c</file>
-            <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/uart.c</file>
+            <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/Motor_isr.c</file>
+            <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/slow_event.c</file>
+            <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/hardware.h</file>
+            <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/init_PWM.h</file>
+            <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/init_PWM.c</file>
+            <file>file:/C:/Users/Duy%20Ngo/Desktop/BLDC/Sensorless-BLDC-Control/Motor_isr.h</file>
         </group>
     </open-files>
 </project-private>

@@ -21,9 +21,9 @@ int initPWM(void)
 	
 	FLTACON = NO_FAULT_PROTECTION;	// PWM1L/H, PWM2L/H, PWM3L/H have no current limiting enabled -- it's taken care of in hardware
 	
-	PDC1 = 0;			// Set all PWM duty cycles initially to zero
-	PDC2 = 0;			
-	PDC3 = 0;
+	PDC1 = lock1;			// Set all PWM duty cycles initially to zero
+	PDC2 = lock1;			
+	PDC3 = lock1;
 	
 	SEVTCMP = 0;		// no special event trigger
 	
