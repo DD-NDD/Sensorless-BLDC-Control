@@ -9,4 +9,6 @@ slow_event.h  \
 init_ADC.h  \
 TuningInterface.h  \
 dsp.h  \
- medium_event.h 
+ medium_event.h  \
+IIR_Filter.h  \
+BEMF_filter.h 

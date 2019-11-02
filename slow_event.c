@@ -20,9 +20,7 @@ volatile struct {
 	{
 		ControlFlags.RunMotor = 0;
 		DebounceFlags.Button_S2 = 1;
-
-		//RunMode = SENSORLESS_START;
-        RunMode = SENSORLESS_RUNNING;
+        RunMode = SENSORLESS_INIT;
 	}
 
 	if(BUTTON_S3)

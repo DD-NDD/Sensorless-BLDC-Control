@@ -13,7 +13,6 @@ void MediumEvent(void)
 	static unsigned int ramp_speed;
 	static int motor_speed;
 	static unsigned long ThreeSixtyDegreeAverage;
-	unsigned int i;
 
 	ControlFlags.MediumEventFlag = 0;
 	{
@@ -25,6 +24,38 @@ void MediumEvent(void)
 				PDC1 = 0;
 				PDC2 = 0;
 				PDC3 = 0;
+				break;
+            case SENSORLESS_RUNNING:
+				DegreesAdvanced =  __builtin_divud(((Speed-phase_advance_start) * phase_advance_slope),1000);
+				if (DegreesAdvanced > MAX_PHASE_ADVANCE)	// Limit Phase advance to MAX_PHASE_ADVANCE
+					DegreesAdvanced = MAX_PHASE_ADVANCE;	
+				if (DegreesAdvanced <= 0)	// Because DegreesAdvanced is a divisor (in the next few line) alway have at least 1 degree of advance
+					phase_advance = 0;
+				else if (Speed > phase_advance_start)
+					phase_advance = __builtin_divud(((unsigned long)ThreeSixtyDegreeAverage*DegreesAdvanced),360);
+				else
+					phase_advance = 0;
+				if (ElectricalSpeed > (CrossOverERPS + 50))  // If electrical speed per second is over 300 then consider going to high speed mode
+					HighLowCntr++;	
+				if (ElectricalSpeed < (CrossOverERPS - 50))	 // If electrical speed per second is under 250 then consider going to low speed mode
+					HighLowCntr--;
+				if (HighLowCntr > 20)	    // The device only goes into high speed mode when the HighLowCntr reaches a certain magnitude
+				{
+					ControlFlags.HighSpeedMode = 1;
+					HighLowCntr = 0;
+				}
+				if (HighLowCntr < -20)		// The device only goes into low speed mode when the HighLowCntr reaches a certain negative magnitude
+				{
+					ControlFlags.HighSpeedMode = 0;
+					HighLowCntr = 0;
+				}
+                break;
+            case SENSORLESS_INIT:
+                GetParameters();
+                signal_average = (vbus >> 1);
+				RunMode = SENSORLESS_START;
+				HighLowCntr = 0;
+				ControlFlags.HighSpeedMode = 0;
 				break;
 			case SENSORLESS_START:
 				switch (SensorlessStartState)

@@ -29,8 +29,7 @@ int initPWM(void)
 	
 	PTCON = 0x8000;		// 
 	
-	//IFS2bits.PWMIF = 0;	// enable the PWM interrupt
-	//IEC2bits.PWMIE = 1;
-    
+	IFS2bits.PWMIF = 0;	// enable the PWM interrupt
+	IEC2bits.PWMIE = 1;
     return 1;
 }
