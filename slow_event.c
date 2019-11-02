@@ -21,8 +21,8 @@ volatile struct {
 		ControlFlags.RunMotor = 0;
 		DebounceFlags.Button_S2 = 1;
 
-		RunMode = SENSORLESS_RUNNING;
-        printf("RunMode = SENSORLESS_RUNNING \r\n");
+		//RunMode = SENSORLESS_START;
+        RunMode = SENSORLESS_RUNNING;
 	}
 
 	if(BUTTON_S3)
@@ -31,7 +31,6 @@ volatile struct {
 		ControlFlags.RunMotor = 0;
 		SensorlessStartState = 0;
 		DebounceFlags.Button_S3 = 1;
-        printf("MOTOR OFF\r\n");
 	}
 
 	if (DebounceFlags.Button_S2)

@@ -42,7 +42,20 @@ volatile struct ControlFlags ControlFlags;
 
 unsigned int pos_ptr = 0;
 unsigned int TMR4Save;
-
+/*---------------------------------------------------------------------
+  Function Name: ADCInterrupt
+  Description:   ADC Interrupt Handler
+  Inputs:        None
+  Returns:       None
+-----------------------------------------------------------------------*/
+void __attribute__((__interrupt__,auto_psv)) _ADCInterrupt( void )   // occurs at a rate of 81.920 kHz
+{
+	/* reset ADC interrupt flag */
+	IFS0bits.ADIF = 0; 
+    pot = (pot + POTBUF) >> 1;
+    // Get the bus voltage and do a little averaging
+	vbus =  (vbus + VBUSBUF) >> 1;
+}
 /*---------------------------------------------------------------------
   Function Name: T2Interrupt
   Description:   T2 Interrupt Handler

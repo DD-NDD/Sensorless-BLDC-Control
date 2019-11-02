@@ -5,4 +5,8 @@ defs.h  \
 debug.h  \
  init_PWM.h  \
 Motor_isr.h  \
-slow_event.h 
+slow_event.h  \
+init_ADC.h  \
+TuningInterface.h  \
+dsp.h  \
+ medium_event.h 
