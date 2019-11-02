@@ -67,13 +67,13 @@ int main(void)
  	T2CON = 0x0010;			// 1:8 prescaler
 	TMR2 = 0;				// clear Timer 2
 	IFS0bits.T2IF = 0;		// Disable the Timer 2 interrupt
-	IEC0bits.T2IE = 1;
+	IEC0bits.T2IE = 0;
 	T2CONbits.TON = 1; 		// Turn on Timer 2
 
 	T3CON = 0x0010;			// 1:8 prescaler
 	TMR3 = 0;				// clear Timer 3
 	IFS0bits.T3IF = 0;		// Disable the Timer 3 interrupt
-	IEC0bits.T3IE = 1;
+	IEC0bits.T3IE = 0;
 
 	T4CON = 0x8000;    			// turn on timer 4
     if(init_UART() == 1)
@@ -85,6 +85,9 @@ int main(void)
         printf("MCPWM INIT OK\r\n");
     }
     Init_ADC();
+    IIRTransposeFilterInit( &BEMF_phaseA_Filter );
+	IIRTransposeFilterInit( &BEMF_phaseB_Filter );
+	IIRTransposeFilterInit( &BEMF_phaseC_Filter );
     RunMode = MOTOR_OFF;
     while(1)
     {
@@ -92,6 +95,7 @@ int main(void)
 			MediumEvent();
 		if(ControlFlags.SlowEventFlag)
 			SlowEvent();
+        //printf("pot  = %lf\r\n",pot);
     }
     return 0;
 }

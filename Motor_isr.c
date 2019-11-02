@@ -5,6 +5,7 @@
 #include "TuningInterface.h"
 #include "IIR_Filter.h"
 #include "BEMF_filter.h"
+#include "stdio.h"
 // ----------------------Function prototypes ---------------------------
 void CheckZeroCrossing(void);
 unsigned int ThirtyDegreeTimeAverage(void);
@@ -205,6 +206,7 @@ void CheckZeroCrossing(void)
 
 	// finds the center voltage of the phase signal even under different loads
 	signal_average = vbus/2 + vbus_offset;
+    //printf("signal average = %f\r\n",vbus);
 	accumulator_c += vpha_filtered_sample - signal_average;
 	vbus_offset = accumulator_c >> 13;
 

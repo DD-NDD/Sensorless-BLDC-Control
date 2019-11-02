@@ -154,9 +154,9 @@ section                    address   length (PC units)   length (bytes) (dec)
 .const                       0x9c0                0x52            0x7b  (123)
 .text                        0xa12               0xa12           0xf1b  (3867)
 .dinit                      0x1424               0x140           0x1e0  (480)
-.text                       0x1564               0x1f8           0x2f4  (756)
+.text                       0x1564               0x20a           0x30f  (783)
 
-                 Total "program" memory used (bytes):         0x218a  (8586) 17%
+                 Total "program" memory used (bytes):         0x21a5  (8613) 17%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x800]
@@ -438,29 +438,29 @@ External Symbols in Program Memory (by address):
                   0x000e90                  _GetParameters
                   0x0011d6                  _MediumEvent
                   0x001564                  _main
-                  0x0015d0                  _DelayNmSec
-                  0x001600                  _SlowEvent
-                  0x001674                  _BlockIIRTransposeFilter
-                  0x0016d6                  _IIRTransposeFilterInit
-                  0x0016e6                  _initPWM
-                  0x001714                  _Init_ADC
-                  0x00173c                  _init_UART
+                  0x0015e2                  _DelayNmSec
+                  0x001612                  _SlowEvent
+                  0x001686                  _BlockIIRTransposeFilter
+                  0x0016e8                  _IIRTransposeFilterInit
+                  0x0016f8                  _initPWM
+                  0x001726                  _Init_ADC
+                  0x00174e                  _init_UART
                   0xf8000a                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
                   0x0009d8                  _BlankingCountInitLimits
-                  0x001674                  _BlockIIRTransposeFilter
+                  0x001686                  _BlockIIRTransposeFilter
                   0x000a12                  _CheckZeroCrossing
                   0x000e30                  _Commutate
                   0x0004cc                  _ConfigIntUART1
                   0x0009dc                  _ControlTermLimits
                   0x0009ec                  _CrossOverLimits
                   0x000514                  _DataRdyUART1
-                  0x0015d0                  _DelayNmSec
+                  0x0015e2                  _DelayNmSec
                   0x000e90                  _GetParameters
-                  0x0016d6                  _IIRTransposeFilterInit
-                  0x001714                  _Init_ADC
+                  0x0016e8                  _IIRTransposeFilterInit
+                  0x001726                  _Init_ADC
                   0x0009c4                  _LockDurationLimits
                   0x0009d4                  _MaxMotorSpeedLimits
                   0x0011d6                  _MediumEvent
@@ -474,7 +474,7 @@ External Symbols in Program Memory (by name):
                   0x0009d0                  _RampEndSpeedLimits
                   0x0009cc                  _RampStartSpeedLimits
                   0x000522                  _ReadUART1
-                  0x001600                  _SlowEvent
+                  0x001612                  _SlowEvent
                   0x000e48                  _ThirtyDegreeTimeAverage
                   0x000210                  __ADCInterrupt
                   0x0003b4                  __AddressError
@@ -511,8 +511,8 @@ External Symbols in Program Memory (by name):
                   0x00058a                  _fputc
                   0x00064c                  _fputs
                   0x000876                  _free
-                  0x0016e6                  _initPWM
-                  0x00173c                  _init_UART
+                  0x0016f8                  _initPWM
+                  0x00174e                  _init_UART
                   0x001564                  _main
                   0x000940                  _malloc
                   0x0006dc                  _memcpy
@@ -725,7 +725,7 @@ __RESERVED2
 
 __FGS             0xf8000a          0x2
  *(__FGS.sec*)
- __FGS.sec        0xf8000a          0x2 /CW/_FGS
+ __FGS.sec        0xf8000a          0x2 /CW/_FGSø½Ò
                   0xf8000a                  __FGS.sec
 
 __FICD
@@ -741,46 +741,46 @@ userdata
  *(.comment)
  .comment         0x000000         0x5e c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xfiles.XX_eo)
 
-.debug_info       0x000000       0x41c0
+.debug_info       0x000000       0x42c0
  *(.debug_info)
- .debug_info      0x000000        0x89c build/default/production/main.o
- .debug_info      0x00089c        0x164 build/default/production/debug.o
- .debug_info      0x000a00        0x3a2 build/default/production/init_PWM.o
- .debug_info      0x000da2       0x10df build/default/production/Motor_isr.o
- .debug_info      0x001e81        0x37e build/default/production/slow_event.o
- .debug_info      0x0021ff        0x813 build/default/production/init_ADC.o
- .debug_info      0x002a12        0x30e build/default/production/trap.o
- .debug_info      0x002d20        0xad6 build/default/production/medium_event.o
- .debug_info      0x0037f6        0x939 build/default/production/TuningInterface.o
- .debug_info      0x00412f         0x91 build/default/production/IIRT_Filter.o
+ .debug_info      0x000000        0x98c build/default/production/main.o
+ .debug_info      0x00098c        0x164 build/default/production/debug.o
+ .debug_info      0x000af0        0x3a2 build/default/production/init_PWM.o
+ .debug_info      0x000e92       0x10e7 build/default/production/Motor_isr.o
+ .debug_info      0x001f79        0x37e build/default/production/slow_event.o
+ .debug_info      0x0022f7        0x813 build/default/production/init_ADC.o
+ .debug_info      0x002b0a        0x30e build/default/production/trap.o
+ .debug_info      0x002e18        0xade build/default/production/medium_event.o
+ .debug_info      0x0038f6        0x939 build/default/production/TuningInterface.o
+ .debug_info      0x00422f         0x91 build/default/production/IIRT_Filter.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x8dd
+.debug_abbrev     0x000000        0x8f9
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x194 build/default/production/main.o
- .debug_abbrev    0x000194         0x45 build/default/production/debug.o
- .debug_abbrev    0x0001d9         0x9d build/default/production/init_PWM.o
- .debug_abbrev    0x000276        0x1d8 build/default/production/Motor_isr.o
- .debug_abbrev    0x00044e         0xee build/default/production/slow_event.o
- .debug_abbrev    0x00053c         0xc5 build/default/production/init_ADC.o
- .debug_abbrev    0x000601         0x8a build/default/production/trap.o
- .debug_abbrev    0x00068b        0x12d build/default/production/medium_event.o
- .debug_abbrev    0x0007b8        0x111 build/default/production/TuningInterface.o
- .debug_abbrev    0x0008c9         0x14 build/default/production/IIRT_Filter.o
+ .debug_abbrev    0x000000        0x1b0 build/default/production/main.o
+ .debug_abbrev    0x0001b0         0x45 build/default/production/debug.o
+ .debug_abbrev    0x0001f5         0x9d build/default/production/init_PWM.o
+ .debug_abbrev    0x000292        0x1d8 build/default/production/Motor_isr.o
+ .debug_abbrev    0x00046a         0xee build/default/production/slow_event.o
+ .debug_abbrev    0x000558         0xc5 build/default/production/init_ADC.o
+ .debug_abbrev    0x00061d         0x8a build/default/production/trap.o
+ .debug_abbrev    0x0006a7        0x12d build/default/production/medium_event.o
+ .debug_abbrev    0x0007d4        0x111 build/default/production/TuningInterface.o
+ .debug_abbrev    0x0008e5         0x14 build/default/production/IIRT_Filter.o
 
-.debug_line       0x000000        0xa5e
+.debug_line       0x000000        0xa84
  *(.debug_line)
- .debug_line      0x000000        0x12a build/default/production/main.o
- .debug_line      0x00012a         0x3a build/default/production/debug.o
- .debug_line      0x000164         0xf5 build/default/production/init_PWM.o
- .debug_line      0x000259        0x250 build/default/production/Motor_isr.o
- .debug_line      0x0004a9        0x105 build/default/production/slow_event.o
- .debug_line      0x0005ae         0xf3 build/default/production/init_ADC.o
- .debug_line      0x0006a1         0xfc build/default/production/trap.o
- .debug_line      0x00079d        0x173 build/default/production/medium_event.o
- .debug_line      0x000910         0xc2 build/default/production/TuningInterface.o
- .debug_line      0x0009d2         0x1a build/default/production/BEMF_filter.o
- .debug_line      0x0009ec         0x72 build/default/production/IIRT_Filter.o
+ .debug_line      0x000000        0x14e build/default/production/main.o
+ .debug_line      0x00014e         0x3a build/default/production/debug.o
+ .debug_line      0x000188         0xf5 build/default/production/init_PWM.o
+ .debug_line      0x00027d        0x250 build/default/production/Motor_isr.o
+ .debug_line      0x0004cd        0x105 build/default/production/slow_event.o
+ .debug_line      0x0005d2         0xf3 build/default/production/init_ADC.o
+ .debug_line      0x0006c5         0xfc build/default/production/trap.o
+ .debug_line      0x0007c1        0x175 build/default/production/medium_event.o
+ .debug_line      0x000936         0xc2 build/default/production/TuningInterface.o
+ .debug_line      0x0009f8         0x1a build/default/production/BEMF_filter.o
+ .debug_line      0x000a12         0x72 build/default/production/IIRT_Filter.o
 
 .debug_frame      0x000000        0x444
  *(.debug_frame)
@@ -794,16 +794,16 @@ userdata
  .debug_frame     0x0003e4         0x30 build/default/production/medium_event.o
  .debug_frame     0x000414         0x30 build/default/production/TuningInterface.o
 
-.debug_str        0x000000        0x769
+.debug_str        0x000000        0x7a2
  *(.debug_str)
- .debug_str       0x000000         0x37 build/default/production/main.o
- .debug_str       0x000037         0x12 build/default/production/init_PWM.o
- .debug_str       0x000049        0x1d6 build/default/production/Motor_isr.o
- .debug_str       0x00021f         0x2c build/default/production/slow_event.o
- .debug_str       0x00024b         0x28 build/default/production/init_ADC.o
- .debug_str       0x000273          0xc build/default/production/trap.o
- .debug_str       0x00027f        0x147 build/default/production/medium_event.o
- .debug_str       0x0003c6        0x3a3 build/default/production/TuningInterface.o
+ .debug_str       0x000000         0x70 build/default/production/main.o
+ .debug_str       0x000070         0x12 build/default/production/init_PWM.o
+ .debug_str       0x000082        0x1d6 build/default/production/Motor_isr.o
+ .debug_str       0x000258         0x2c build/default/production/slow_event.o
+ .debug_str       0x000284         0x28 build/default/production/init_ADC.o
+ .debug_str       0x0002ac          0xc build/default/production/trap.o
+ .debug_str       0x0002b8        0x147 build/default/production/medium_event.o
+ .debug_str       0x0003ff        0x3a3 build/default/production/TuningInterface.o
 
 .debug_loc
  *(.debug_loc)
@@ -1566,110 +1566,110 @@ LOAD c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
 OUTPUT(dist/default/production/Sensorless-BLDC-Control.production.elf elf32-pic30)
-LOAD /CW/_FGS
+LOAD /CW/_FGSø½Ò
 LOAD jump_table
 LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x0000f0        0x3e9
+                  0x0000f0        0x400
  .debug_pubtypes
-                  0x0000f0         0x89 build/default/production/main.o
+                  0x0000f0         0xa0 build/default/production/main.o
  .debug_pubtypes
-                  0x000179         0x12 build/default/production/debug.o
+                  0x000190         0x12 build/default/production/debug.o
  .debug_pubtypes
-                  0x00018b         0x59 build/default/production/init_PWM.o
+                  0x0001a2         0x59 build/default/production/init_PWM.o
  .debug_pubtypes
-                  0x0001e4         0xde build/default/production/Motor_isr.o
+                  0x0001fb         0xde build/default/production/Motor_isr.o
  .debug_pubtypes
-                  0x0002c2         0x4f build/default/production/slow_event.o
+                  0x0002d9         0x4f build/default/production/slow_event.o
  .debug_pubtypes
-                  0x000311         0x9b build/default/production/init_ADC.o
+                  0x000328         0x9b build/default/production/init_ADC.o
  .debug_pubtypes
-                  0x0003ac         0x42 build/default/production/trap.o
+                  0x0003c3         0x42 build/default/production/trap.o
  .debug_pubtypes
-                  0x0003ee         0xac build/default/production/medium_event.o
+                  0x000405         0xac build/default/production/medium_event.o
  .debug_pubtypes
-                  0x00049a         0x3f build/default/production/TuningInterface.o
+                  0x0004b1         0x3f build/default/production/TuningInterface.o
 
 __c30_signature
-                  0x0004d9         0xe4
+                  0x0004f0         0xe4
  __c30_signature
-                  0x0004d9          0x6 build/default/production/main.o
+                  0x0004f0          0x6 build/default/production/main.o
  __c30_signature
-                  0x0004df          0x6 build/default/production/debug.o
+                  0x0004f6          0x6 build/default/production/debug.o
  __c30_signature
-                  0x0004e5          0x6 build/default/production/init_PWM.o
+                  0x0004fc          0x6 build/default/production/init_PWM.o
  __c30_signature
-                  0x0004eb          0x6 build/default/production/Motor_isr.o
+                  0x000502          0x6 build/default/production/Motor_isr.o
  __c30_signature
-                  0x0004f1          0x6 build/default/production/slow_event.o
+                  0x000508          0x6 build/default/production/slow_event.o
  __c30_signature
-                  0x0004f7          0x6 build/default/production/init_ADC.o
+                  0x00050e          0x6 build/default/production/init_ADC.o
  __c30_signature
-                  0x0004fd          0x6 build/default/production/trap.o
+                  0x000514          0x6 build/default/production/trap.o
  __c30_signature
-                  0x000503          0x6 build/default/production/medium_event.o
+                  0x00051a          0x6 build/default/production/medium_event.o
  __c30_signature
-                  0x000509          0x6 build/default/production/TuningInterface.o
+                  0x000520          0x6 build/default/production/TuningInterface.o
  __c30_signature
-                  0x00050f          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib/dsPIC30F\libp30F4011-elf.a(ConfigIntUART1.o)
+                  0x000526          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib/dsPIC30F\libp30F4011-elf.a(ConfigIntUART1.o)
  __c30_signature
-                  0x000515          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib/dsPIC30F\libp30F4011-elf.a(DataRdyUART1.o)
+                  0x00052c          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib/dsPIC30F\libp30F4011-elf.a(DataRdyUART1.o)
  __c30_signature
-                  0x00051b          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib/dsPIC30F\libp30F4011-elf.a(OpenUART1.o)
+                  0x000532          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib/dsPIC30F\libp30F4011-elf.a(OpenUART1.o)
  __c30_signature
-                  0x000521          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib/dsPIC30F\libp30F4011-elf.a(ReadUART1.o)
+                  0x000538          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib/dsPIC30F\libp30F4011-elf.a(ReadUART1.o)
  __c30_signature
-                  0x000527          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
+                  0x00053e          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x00052d          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
+                  0x000544          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x000533          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+                  0x00054a          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libm-elf.a(divsi3.eo)
  __c30_signature
-                  0x000539          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x000550          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
  __c30_signature
-                  0x00053f          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(puts.XX_eo)
+                  0x000556          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(puts.XX_eo)
  __c30_signature
-                  0x000545          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xfiles.XX_eo)
+                  0x00055c          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xfiles.XX_eo)
  __c30_signature
-                  0x00054b          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(fputc.XX_elo)
+                  0x000562          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(fputc.XX_elo)
  __c30_signature
-                  0x000551          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(fflush.XX_eo)
+                  0x000568          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(fflush.XX_eo)
  __c30_signature
-                  0x000557          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(fputs.XX_eo)
+                  0x00056e          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(fputs.XX_eo)
  __c30_signature
-                  0x00055d          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(memcpy.XX_eo)
+                  0x000574          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(memcpy.XX_eo)
  __c30_signature
-                  0x000563          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(strlen.XX_eo)
+                  0x00057a          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(strlen.XX_eo)
  __c30_signature
-                  0x000569          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(strrchr.XX_eo)
+                  0x000580          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(strrchr.XX_eo)
  __c30_signature
-                  0x00056f          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xfwprep.XX_eo)
+                  0x000586          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xfwprep.XX_eo)
  __c30_signature
-                  0x000575          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(fclose.XX_elo)
+                  0x00058c          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(fclose.XX_elo)
  __c30_signature
-                  0x00057b          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xatexit.XX_elo)
+                  0x000592          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xatexit.XX_elo)
  __c30_signature
-                  0x000581          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(free.XX_eo)
+                  0x000598          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(free.XX_eo)
  __c30_signature
-                  0x000587          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(malloc.XX_eo)
+                  0x00059e          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(malloc.XX_eo)
  __c30_signature
-                  0x00058d          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xgetmem.XX_eo)
+                  0x0005a4          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf.a(xgetmem.XX_eo)
  __c30_signature
-                  0x000593          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(close.Leo)
+                  0x0005aa          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(close.Leo)
  __c30_signature
-                  0x000599          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(write.Leo)
+                  0x0005b0          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(write.Leo)
  __c30_signature
-                  0x00059f          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(remove.Leo)
+                  0x0005b6          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(remove.Leo)
  __c30_signature
-                  0x0005a5          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(sbrk.Leo)
+                  0x0005bc          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(sbrk.Leo)
  __c30_signature
-                  0x0005ab          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(c30_uart.Leo)
+                  0x0005c2          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(c30_uart.Leo)
  __c30_signature
-                  0x0005b1          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(brk.Lelo)
+                  0x0005c8          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(brk.Lelo)
  __c30_signature
-                  0x0005b7          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
+                  0x0005ce          0x6 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
 
 data                0x0800         0x3c
  data               0x0800         0x3c build/default/production/BEMF_filter.o
@@ -1920,18 +1920,18 @@ b                   0x0fdc         0x24
 .dinit            0x001424        0x140
  .dinit           0x001424        0x140 data_init
 
-.text             0x001564        0x1f8
- .text            0x001564         0x9c build/default/production/main.o
+.text             0x001564        0x20a
+ .text            0x001564         0xae build/default/production/main.o
                   0x001564                  _main
-                  0x0015d0                  _DelayNmSec
- .text            0x001600         0x74 build/default/production/slow_event.o
-                  0x001600                  _SlowEvent
- .text            0x001674         0x72 build/default/production/IIRT_Filter.o
-                  0x001674                  _BlockIIRTransposeFilter
-                  0x0016d6                  _IIRTransposeFilterInit
- .text            0x0016e6         0x2e build/default/production/init_PWM.o
-                  0x0016e6                  _initPWM
- .text            0x001714         0x28 build/default/production/init_ADC.o
-                  0x001714                  _Init_ADC
- .text            0x00173c         0x20 build/default/production/debug.o
-                  0x00173c                  _init_UART
+                  0x0015e2                  _DelayNmSec
+ .text            0x001612         0x74 build/default/production/slow_event.o
+                  0x001612                  _SlowEvent
+ .text            0x001686         0x72 build/default/production/IIRT_Filter.o
+                  0x001686                  _BlockIIRTransposeFilter
+                  0x0016e8                  _IIRTransposeFilterInit
+ .text            0x0016f8         0x2e build/default/production/init_PWM.o
+                  0x0016f8                  _initPWM
+ .text            0x001726         0x28 build/default/production/init_ADC.o
+                  0x001726                  _Init_ADC
+ .text            0x00174e         0x20 build/default/production/debug.o
+                  0x00174e                  _init_UART

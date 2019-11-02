@@ -2,6 +2,7 @@
 #include "Motor_isr.h"
 #include "hardware.h"
 #include "TuningInterface.h"
+#include "stdio.h"
 unsigned int DegreesAdvanced;   // Degrees of Phase advance based on speed
 unsigned int ElectricalSpeed;	// Electrical Speed in electrical revolutions per second
 
@@ -51,6 +52,7 @@ void MediumEvent(void)
 				}
                 break;
             case SENSORLESS_INIT:
+                //printf("SENSORLESS_INIT\r\n");
                 GetParameters();
                 signal_average = (vbus >> 1);
 				RunMode = SENSORLESS_START;
@@ -96,6 +98,7 @@ void MediumEvent(void)
 						{
 							SensorlessStartState = 0;
 							RunMode = SENSORLESS_RUNNING;
+                            //printf("SENSORLESS_INIT\r\n");
 							T3CONbits.TON = 0; 	
 							IEC0bits.T3IE = 0;
 							IFS0bits.T1IF = 0;

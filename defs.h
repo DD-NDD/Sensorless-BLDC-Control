@@ -50,8 +50,8 @@ extern "C" {
 //ADC Configuration Values for low and high speed modes
 #define ADCON2_LOW_SPEED 0x0410     // channel scan for CH0, MUX A only, 5 conversions per interrupt, Vrefs are AVdd and AVss
 #define ADCON2_HIGH_SPEED 0x0408    // channel scan for CH0, MUX A only, 3 conversions per interrupt, Vrefs are AVdd and AVss
-#define ADCSSL_LOW_SPEED 0x003D     // scan AN0, AN2, AN3, AN4 and AN5
-#define ADCSSL_HIGH_SPEED 0x000D    // scan AN0, AN2, AN3
+#define ADCSSL_LOW_SPEED 0x01C5     // scan AN0, AN2, AN6, AN7 and AN8
+#define ADCSSL_HIGH_SPEED 0x0045    // scan AN0, AN2, AN6
 // Define the ADC result buffers for the analog pins
 #define POTBUF	ADCBUF1		//AN2
 #define VBUSBUF	ADCBUF0		//AN0
