@@ -29,34 +29,25 @@ int16_t main()
 	unsigned int j;
 
 	run_state=INITIALIZING;
-	// Set up peripherals - see setup.c for source code
+	// Thiet lap cac ngoai vi
 	setup_ports();
-	// Note interrupts must not be running during setup_motor_pwms()
-	// as config registers are written to set firing polarity
+	// Luu y ngat khong duoc chay trong setup_motor_pwms();
 	setup_motor_pwms();
 	setup_adc();
 	setup_qei();
 	setup_timers();
-
-	// Reset Power Module using delay due to screen initialization 
-	// to ensure don't violate min pulse width of 2us at 12C671 PIC
-	// in the power module
-		
 //	FAULT_RESET=TRUE;
 	IFS2bits.FLTAIF=0;
 
-	// Enable All types ofMath Error Traps
+	// Kich hoat cac bay loi
 	INTCON1bits.OVATE=TRUE;
 	INTCON1bits.OVBTE=TRUE;
 	INTCON1bits.COVTE=TRUE;
-	// Make the FAULT A Interrupt highest priority=7
-	// Leave all others at the default of 4
+	// Dat FAULT A uu tien cao nhat priority=7
+	// Tat ca con lai dat mac dinh la 4
 	IPC10bits.FLTAIP=7;
-	// Enable interrupts
-	// NB T2 used for Output Compare is not enabled
-	// here but only when commutation is required.
-	// The same goes for T1 which is used as a guard
-	// timer to catch a missed zero crossing event.
+	// Kich hoat ngat
+	// NB T2 duoc su dung cho so sanh dau ra khong duoc bat
 	IEC2bits.PWMIE = 1;
 	IEC2bits.FLTAIE=1;
 	IEC0bits.ADIE = 1;
