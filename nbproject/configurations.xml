@@ -22,7 +22,6 @@
                    projectFiles="true">
       <itemPath>configuration_bits.c</itemPath>
       <itemPath>main.c</itemPath>
-      <itemPath>traps.c</itemPath>
       <itemPath>globals.c</itemPath>
       <itemPath>ISRs.c</itemPath>
       <itemPath>user_interface.c</itemPath>
