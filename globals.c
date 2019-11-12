@@ -1,7 +1,3 @@
-/******************************************************************************/
-/* Files to Include                                                           */
-/******************************************************************************/
-/* Device header file */
 #include <xc.h>
 #include <stdint.h>          /* For uint32_t definition                       */
 #include <stdbool.h>         /* For true/false definition                     */

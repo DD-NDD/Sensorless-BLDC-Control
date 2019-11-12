@@ -1,52 +1,7 @@
-/******************************************************************************/
-/* Files to Include                                                           */
-/******************************************************************************/
-
-/* Device header file */
 #include <xc.h>
-
-#include <stdint.h>          /* For uint32_t definition                       */
-#include <stdbool.h>         /* For true/false definition                     */
-/**********************************************************************
- *                                                                     *
- *                        Software License Agreement                   *
- *                                                                     *
- *    The software supplied herewith by Microchip Technology           *
- *    Incorporated (the "Company") for its dsPIC controller            *
- *    is intended and supplied to you, the Company's customer,         *
- *    for use solely and exclusively on Microchip dsPIC                *
- *    products. The software is owned by the Company and/or its        *
- *    supplier, and is protected under applicable copyright laws. All  *
- *    rights are reserved. Any use in violation of the foregoing       *
- *    restrictions may subject the user to criminal sanctions under    *
- *    applicable laws, as well as to civil liability for the breach of *
- *    the terms and conditions of this license.                        *
- *                                                                     *
- *    THIS SOFTWARE IS PROVIDED IN AN "AS IS" CONDITION.  NO           *
- *    WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING,    *
- *    BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND    *
- *    FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. THE     *
- *    COMPANY SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL,  *
- *    INCIDENTAL OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.  *
- *                                                                     *
-  **********************************************************************/
-
- /**********************************************************************
- *                                                                     * 
- *    Author: Smart Power Soutions, LLP                                * 
- *                                                                     *
- *    Filename:       user_interface.c	                                *
- *    Date:           7/6/05                                         *
- *    File Version:   5.00                                             *
- *    Project:        53                                               *
- *    Drawing:        2                                                *
- *                                                                     *
- *    Tools used:    MPLAB C30 Compiler v 1.30                      *
- *                                                                     *
- *    Linker File:    p30f3010.gld                                   *
- *                                                                     *
- *                                                                     *
- ***********************************************************************
+#include <stdint.h>
+#include <stdbool.h>
+/***********************************************************************
  *	Code Description
  *  
  *  This file contains all the code for implementing the user interface.
@@ -209,13 +164,6 @@ volatile unsigned int user_parameters_RAM[64]=
 // as otherwise the system may be determined to lost just due to
 // normal variations.
 /*********************************************************************/
-
-
-
-
-
-
-
 struct interface_flags {
 				unsigned START_BUTTON : 1;
 				unsigned UNUSED : 15;

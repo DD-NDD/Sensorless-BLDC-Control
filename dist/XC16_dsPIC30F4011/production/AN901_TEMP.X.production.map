@@ -485,7 +485,7 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x5067
+.debug_info       0x000000       0x5066
  *(.debug_info)
  .debug_info      0x000000        0x12b build/XC16_dsPIC30F4011/production/configuration_bits.o
  .debug_info      0x00012b        0x7cb build/XC16_dsPIC30F4011/production/main.o
@@ -493,8 +493,8 @@ userdata
  .debug_info      0x0014da       0x117e build/XC16_dsPIC30F4011/production/ISRs.o
  .debug_info      0x002658        0x8b2 build/XC16_dsPIC30F4011/production/user_interface.o
  .debug_info      0x002f0a        0x79a build/XC16_dsPIC30F4011/production/slow_event.o
- .debug_info      0x0036a4        0xb9c build/XC16_dsPIC30F4011/production/setup.o
- .debug_info      0x004240        0xe27 build/XC16_dsPIC30F4011/production/medium_event.o
+ .debug_info      0x0036a4        0xb9b build/XC16_dsPIC30F4011/production/setup.o
+ .debug_info      0x00423f        0xe27 build/XC16_dsPIC30F4011/production/medium_event.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x793
@@ -508,7 +508,7 @@ userdata
  .debug_abbrev    0x0004d9        0x150 build/XC16_dsPIC30F4011/production/setup.o
  .debug_abbrev    0x000629        0x16a build/XC16_dsPIC30F4011/production/medium_event.o
 
-.debug_line       0x000000        0x9ee
+.debug_line       0x000000        0x9eb
  *(.debug_line)
  .debug_line      0x000000         0x1a build/XC16_dsPIC30F4011/production/configuration_bits.o
  .debug_line      0x00001a        0x106 build/XC16_dsPIC30F4011/production/main.o
@@ -516,8 +516,8 @@ userdata
  .debug_line      0x000147        0x357 build/XC16_dsPIC30F4011/production/ISRs.o
  .debug_line      0x00049e        0x165 build/XC16_dsPIC30F4011/production/user_interface.o
  .debug_line      0x000603         0xae build/XC16_dsPIC30F4011/production/slow_event.o
- .debug_line      0x0006b1        0x14b build/XC16_dsPIC30F4011/production/setup.o
- .debug_line      0x0007fc        0x1f2 build/XC16_dsPIC30F4011/production/medium_event.o
+ .debug_line      0x0006b1        0x14a build/XC16_dsPIC30F4011/production/setup.o
+ .debug_line      0x0007fb        0x1f0 build/XC16_dsPIC30F4011/production/medium_event.o
 
 .debug_frame      0x000000        0x3ee
  *(.debug_frame)

@@ -1,7 +1,6 @@
 /******************************************************************************/
 /* Files to Include                                                           */
 /******************************************************************************/
-
 #include <xc.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -9,7 +8,6 @@
 #include "defs.h"
 #include "extern_globals.h"
 #include "ISRs.h"
-
 
 static void current_control(void);
 static void acquire_position(void);

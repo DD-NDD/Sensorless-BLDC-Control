@@ -4,8 +4,8 @@
 
 /* Device header file */
 #include <xc.h>
-#include <stdint.h>        /* Includes uint16_t definition                    */
-#include <stdbool.h>       /* Includes true/false definition                  */
+#include <stdint.h>
+#include <stdbool.h>
 #include "hardware.h"
 #include "defs.h"
 #include "extern_globals.h"
