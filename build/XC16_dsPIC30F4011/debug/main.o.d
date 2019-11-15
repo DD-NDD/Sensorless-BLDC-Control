@@ -1,4 +1,4 @@
-build/XC16_dsPIC30F4011/production/main.o:  \
+build/XC16_dsPIC30F4011/debug/main.o:  \
 main.c  \
 hardware.h  \
 defs.h  \

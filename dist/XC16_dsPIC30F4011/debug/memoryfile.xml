@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/XC16_dsPIC30F4011/production/AN901.production.elf">
+  <executable name="dist/XC16_dsPIC30F4011/debug/AN901.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
-      <used>542</used>
-      <free>1506</free>
+      <used>622</used>
+      <free>1426</free>
     </memory>
     <memory name="program">
       <units>bytes</units>

@@ -47,12 +47,8 @@ void WriteConfig(int,int);
 
 void setup_ports(void)
 {
-	// Clear All Ports Prior to defining I/O
-
-	PORTB=0;
-	PORTC=0;
-	PORTD=0;
-	PORTE=0;
+	LATE = 0x0000;
+	TRISE = 0xFFC0;
 
 	
 	// Ensure Firing is disabled
@@ -200,7 +196,7 @@ void setup_motor_pwms(void)
 		// Bit0 = #1 Pair
 							
 			
-	FLTACON = 0xFF0F;	//All pins driven ACTIVE with latched FLTA
+	FLTACON = 0x0000;	//All pins driven ACTIVE with latched FLTA
 							//but this turns switches off due to inversion
 							//of ACTIVE definition
 
@@ -340,16 +336,27 @@ void setup_adc(void)
 	// Bits15-0 1=Digital, port read enabled, ADC Mux input=AVss
 	//			0=Analogue, port read disabled, ADC samples pin
 	
-	ADPCFG = 0x8000; //AN15 used as OCFB digital pin
+	//ADPCFG = 0x8000; //AN15 used as OCFB digital pin
 						  //For the moment assume that AN0,1 are used for ICD
 						  //All other analogue channels
-
+    ADPCFG = 0xFFFF;
+    ADPCFGbits.PCFG0 = 0;
+    ADPCFGbits.PCFG1 = 0;
+    ADPCFGbits.PCFG2 = 0;
+    ADPCFGbits.PCFG6 = 0;
+    ADPCFGbits.PCFG7 = 0;
+    ADPCFGbits.PCFG8 = 0;
 	// ADCSSL - ADC Scan Select Regsiter
 	//	Bits15-0 - 1=ANx is selected for scan
 	//				- 0=ANx is not selected for scan
 
-	ADCSSL = 0x7020; //AN5, AN12-14 selected for scan
-
+	ADCSSL = 0x0000; //AN5, AN12-14 selected for scan
+    ADCSSLbits.CSSL0 = 1;
+    ADCSSLbits.CSSL1 = 1;
+    ADCSSLbits.CSSL2 = 1;
+    ADCSSLbits.CSSL6 = 1;
+    ADCSSLbits.CSSL7 = 1;
+    ADCSSLbits.CSSL8 = 1;
 	// Clear Off Any Interrupt Due To Configuration
 	IFS0bits.ADIF = 0;
 	// Turn on ADC Module

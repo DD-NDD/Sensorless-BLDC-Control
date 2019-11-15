@@ -8,7 +8,7 @@
 #include "defs.h"
 #include "extern_globals.h"
 #include "ISRs.h"
-
+#include "stdio.h"
 static void current_control(void);
 static void acquire_position(void);
 
@@ -81,13 +81,12 @@ void __attribute__((__interrupt__,no_auto_psv)) _FLTAInterrupt (void)
 
 void __attribute__((__interrupt__,no_auto_psv)) _ADCInterrupt (void)
 {
-	// Clear off interrupt flag
+	// Xoa co ngat ADC
 	IFS0bits.ADIF = 0;
 
-	
-	// Get Results from ADC Buffer and put them into relevant variables
-	// When in normal running we get one phase voltage, dc bus voltage
-	// dc bus current and VR2 as simultaneous samples every pwm
+	// Lay ket qua tu bo nho ADC va gan vao cac bien lien quan
+    // khi trong che do binh thuong chay, ta lay ket qua 1 pha va dc bus la du
+    // dien ap dc bus va POT duoc lay may moi pwm
 	// When acquiring we need to see all three phase voltages so 
 	// we continuously cycle ADC CH0 between the three phase voltages
 	if (control_flags.ACQUIRE2==TRUE)
@@ -113,6 +112,7 @@ void __attribute__((__interrupt__,no_auto_psv)) _ADCInterrupt (void)
 	else
 	{
 		vph=ADCBUF0;
+        //printf("%d\r\n",vph);
 	}
 	vdc=ADCBUF1;  
 	ibus=ADCBUF2;
@@ -246,6 +246,7 @@ void __attribute__((__interrupt__,no_auto_psv)) _T2Interrupt(void)
 	// may violate tolerance checks due to change over transient
 	if (control_flags.SWAP==TRUE)
 	{
+        printf("swap\r\n");
 		control_flags.SENSORLESS=TRUE;
 		control_flags.SWAP=FALSE;
 		check_counter=6;
@@ -888,6 +889,7 @@ static void acquire_position(void)
 		run_state=FAULT;
 		trip_state=FAILED_TO_START;
 		control_flags.ACQUIRE2=FALSE;
+        printf("FALSE");
 		return;
 	}
 	// Note that all three sections of code below are similar in function but 

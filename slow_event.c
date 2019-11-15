@@ -2,7 +2,7 @@
 #include "hardware.h"
 #include "defs.h"
 #include "extern_globals.h"
-
+#include "stdio.h"
 void slow_event_handler(void);
 void process_parameters(void);
 extern void process_switches(void);
@@ -18,7 +18,6 @@ void slow_event_handler(void)
 		filtered_pot=(filtered_pot+pot)/2;
 		filtered_rpm=(filtered_rpm+rpm)/2;
 		filtered_ibus=(filtered_ibus+ibus)/2;
-		
 		// If the software is in standby, call process_parameters
 		// to updated all calculated parameters.
 		if( run_state == STANDBY ) 
@@ -27,6 +26,7 @@ void slow_event_handler(void)
 		process_switches();
 		slow_event_count=0;
 	}
+    //printf("rpm:%d\r\n",rpm);
 	return;
 }
 

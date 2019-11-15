@@ -12,8 +12,8 @@
 #define DISABLE_FIRING PWMCON1 = 0x0700
 #define ENABLE_FIRING  PWMCON1 = 0x0777
 
-//This is the RS232_TX line
-#define RS232_TX LATFbits.LATF3
-
-//This is the RS232_RX line
-#define RS232_RX PORTFbits.RF2
+////This is the RS232_TX line
+//#define RS232_TX LATFbits.LATF3
+//
+////This is the RS232_RX line
+//#define RS232_RX PORTFbits.RF2

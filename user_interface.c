@@ -1,6 +1,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "stdio.h"
 /***********************************************************************
  *	Code Description
  *  
@@ -89,20 +90,20 @@ volatile unsigned int user_parameters_RAM[64]=
 {	
 	//BACKWARDS,
 	FORWARDS,
-	CLOSED_VOLTS,	// Speed Control Mode - See defs.h 
-	50,				// First Lock Position Time in units of medium event (10ms) 
-	50,				// Second Lock Position Time in units of medium event (10ms) 
-	50,				// % Demand Used For Lock Position 1
-	50,				// % Demand Used For Lock Position 2			
+	OPEN_VOLTS,	// Speed Control Mode - See defs.h 
+	30,				// First Lock Position Time in units of medium event (10ms) 
+	30,				// Second Lock Position Time in units of medium event (10ms) 
+	30,				// % Demand Used For Lock Position 1
+	30,				// % Demand Used For Lock Position 2			
 	100,			// Starting Speed for Ramp / RPM 
-	3000,			// Finish Speed for Ramp / RPM	
+	1000,			// Finish Speed for Ramp / RPM	 toc do ket thuc
 	58,				// % Demand Used At Start of Ramp
-	85,				// % Demand Used At End of Ramp	
-	30,				// Duration of starting ramp in units of medium event (10ms)
-	1500,			// Phase Advance Start Speed in RPM (1500 default) 
+	58,				// % Demand Used At End of Ramp	
+	3000,				// Duration of starting ramp in units of medium event (10ms) 30
+	500,			// Phase Advance Start Speed in RPM (1500 default) 
 	25,				// Phase Advance Slope in 1/1000th elec. degree / RPM	
 	100,			// Stall Time Limit in units of medium event (10ms) 
-	3500,			// Over Speed Trip in RPM (3500 default)	
+	1000,			// Over Speed Trip in RPM (3500 default)	
 	500,			//	Over Voltage Trip in 1/10ths V
 	100,			// Over Current Limit in 1/10ths A 
 	900,			// Current Loop P Gain 
@@ -114,17 +115,17 @@ volatile unsigned int user_parameters_RAM[64]=
 	10000,			// Voltage Loop P Gain 
 	5000,			// Voltage Loop I Gain 
 	10,				// Number of Motor Poles 
-	100,			// Current Scaling X - see below
-	539,			// Current Scaling / - see below
-	240,			// Voltage Scaling X - see below
-	1024,			// Voltage Scaling / - see below
+	100,			// Current Scaling X - see below 100
+	539,			// Current Scaling / - see below 539
+	240,			// Voltage Scaling X - see below 240
+	1024,			// Voltage Scaling / - see below 1024
 	90,				// % Tolerance used for Lost Check - see below
 	1,				// Auto-reaquire if lost ON/OFF
 	3,				// Blanking Length used for zero X in no of ADC samples
 	2,				// No. of samples required > or < VDC/2 before zero X checked for
 	12,  			// ADC value used for rising edge detect for acquisition routine
 	6,				// No of samples of VPH before rising edge detect done in acquisition
-	5,				// Rotation Timeout in units of medium event (10ms)
+	5,				// Rotation Timeout in units of medium event (10ms) 5
 	1,				// Divisor used to scale pot ADC reading to Duty Cycle
 	8,				// Divisor used to scale pot ADC reading to I Dem in ADC
 	3,				// X Used to Scale pot ADC reading to wdemand in rpm
@@ -132,7 +133,7 @@ volatile unsigned int user_parameters_RAM[64]=
 	20,				// % Demand Used For Windmilling Braking
 	1,				// Duration of braking ramp in units of medium event (10ms)
 	0,				// Use Method 1 (=0) or Method 2 (=1) for acquisition of position
-	700};			// Speed at Which ZeroX detection enabled when using method1 acqusition
+	400};			// Speed at Which ZeroX detection enabled when using method1 acqusition
 
 // Current and Voltage Scaling X and / Parameters
 // These are used to scale ADC readings into Amps or Volts as follows: 
@@ -201,6 +202,7 @@ void process_switches(void)
 		case STANDBY:	if (interface_flags.START_BUTTON)
 							{
 								DISABLE_INTERRUPTS;
+                                printf(" STANDBY\r\n");
 								control_flags2.ROTATION_CHECK=TRUE;
 								control_flags2.RETRY_FLAG=FALSE;
 								control_flags.LOCK1=FALSE;
@@ -221,6 +223,7 @@ void process_switches(void)
 		case STARTING:	if (interface_flags.START_BUTTON)
 							{
 								DISABLE_FIRING;
+                                printf("STARTTING\r\n");
 								control_flags.SENSORLESS=FALSE;
 								control_flags.ACQUIRE2=FALSE;
 								IEC0bits.T1IE=FALSE;
@@ -232,6 +235,7 @@ void process_switches(void)
 		case RUNNING: 	if (interface_flags.START_BUTTON)
 							{
 								DISABLE_FIRING;
+                                printf("RUNNNING\r\n");
 								control_flags.SENSORLESS=FALSE;
 								control_flags.ACQUIRE2=FALSE;
 								IEC0bits.T1IE=FALSE;
@@ -244,6 +248,7 @@ void process_switches(void)
 							{
 								trip_state=NO_TRIP;
 								DISABLE_INTERRUPTS;
+                                printf("FAULT\r\n");
 								control_flags.LOCK1=FALSE;
 								control_flags.LOCK2=FALSE;
 								control_flags.RAMP=FALSE;
@@ -281,7 +286,7 @@ void debounce_switches(void)
 	// So we complement and shift them down to be aligned to 
 	//	the bottom which will also effectively mask off all other bits.
 
-	if (!PORTCbits.RC14)
+	if (!PORTDbits.RD0)
 		switch_states = 0x8;
 	else switch_states = 0x0;
 	if (switch_states!=previous_switch_states)

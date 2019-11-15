@@ -4,6 +4,7 @@
 #include "extern_globals.h"
 #include "medium_event.h"
 #include "user_interface.h"
+#include "stdio.h"
 void medium_event_handler(void)
 {
 	long	ltemp;
@@ -23,7 +24,10 @@ void medium_event_handler(void)
 		// trips if speed loop active due to initial oscillation
 		// giving unreliable speed calculation
 		if (check_counter)
+        {
 			rpm=user_parameters_RAM[7];
+            
+        }
 		else
 			// Calculate speed in RPM for display and control purposes
 			// Period used for speed measurement is 180 electrical degrees
@@ -120,6 +124,7 @@ void medium_event_handler(void)
 void speed_loop(void)
 {
 
+    printf("speed_loop\r\n");
 	static long speed_integral;
 	int speed_error;
 	long proportional_term, pos_wloop_limit, neg_wloop_limit;

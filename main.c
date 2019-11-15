@@ -13,6 +13,8 @@
 #include "slow_event.h"
 #include "setup.h"
 #include "user_interface.h"
+#include "uart.h"
+#include "stdio.h"
 /******************************************************************************/
 /* Global Variable Declaration                                                */
 /******************************************************************************/
@@ -34,8 +36,9 @@ int16_t main()
 	// Luu y ngat khong duoc chay trong setup_motor_pwms();
 	setup_motor_pwms();
 	setup_adc();
-	setup_qei();
+	//setup_qei();
 	setup_timers();
+    UART1_Initialize();
 //	FAULT_RESET=TRUE;
 	IFS2bits.FLTAIF=0;
 
@@ -61,10 +64,13 @@ int16_t main()
 	process_parameters();	
 
 	// Main background loop starts here		
+    printf(" SETUP OKE\r\n");
+    unsigned int temprpm;
 	while(1)
 	{
 		ClrWdt();
 		medium_event_handler();								
 		slow_event_handler();
+            
 	}	
 }
